@@ -1,55 +1,48 @@
-import React, {useEffect, useState} from 'react';
-import { Container, Typography } from '@mui/material';
-import {  makeStyles } from '@mui/styles';
-import PlantCard from './PlantCard'; // Make sure to create this component
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import '../styles/PlantCarousel.css';
 
-const useStyles = makeStyles((theme) => ({
-    container: {
-        paddingTop: theme.spacing(8),
-        paddingBottom: theme.spacing(8),
-    },
-    title: {
-        marginBottom: theme.spacing(4),
-    },
-}));
-
-function PlantCarousel() {
-    const classes = useStyles();
-
+const PlantCarousel = () => {
     const [plants, setPlants] = useState([]);
 
     useEffect(() => {
-        const baseUrl = 'http://localhost:8080';
-
-        // Define the API endpoint relative to the base URL
-        const apiUrl = `${baseUrl}/api/plants/carouselOptions`;
-
-        // Fetches plant data from the backend using Axios
-        axios.get(apiUrl)
-            .then((response) =>  {
-                console.log('Plant data response:', response.data);
-
-                // Set the fetched plant data in the state
+        // Fetch plant data from your API
+        axios
+            .get('http://localhost:8080/api/plants/carouselOptions')
+            .then((response) => {
                 setPlants(response.data);
             })
             .catch((error) => {
                 console.error('Error fetching plant data:', error);
-        });
-    }, []); // Fetches data once on component mount.
+            });
+    }, []);
 
     return (
-        <Container className={classes.container}>
-            <Typography variant="h2" className={classes.title}>
-                Plant Carousel
-            </Typography>
-            <div className="plant-carousel">
+        <div className="plant-carousel-container">
+            <h2>Plant Carousel</h2>
+            <Carousel className="custom-carousel">
                 {plants.map((plant) => (
-                    <PlantCard key={plant.plantId} plant={plant} />
+                    <div key={plant.plantId} className="plant-slide">
+                        <div className="image-container">
+                            <img
+                                src={plant.imageUrl}
+                                alt={plant.plantName}
+                                className="image"
+                            />
+                        </div>
+                        <div className="plant-info">
+                            <h3>{plant.plantName}</h3>
+                            <p>Scientific Name: {plant.scientificName}</p>
+                            <p>Description: {plant.plantDescription}</p>
+                            <p>Edible: {plant.edible ? 'Yes' : 'No'}</p>
+                        </div>
+                    </div>
                 ))}
-            </div>
-        </Container>
+            </Carousel>
+        </div>
     );
-}
+};
 
 export default PlantCarousel;

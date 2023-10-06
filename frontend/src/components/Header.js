@@ -40,6 +40,9 @@ function Header() {
                 <Link to="/carousel" className={classes.link}>
                     <Button color="inherit">Plant Carousel</Button>
                 </Link>
+                <Link to="/create-garden" className={classes.link}>
+                    <Button color="inherit">Create a Garden</Button>
+                </Link>
                 <Link to="/search" className={classes.link}>
                     <Button color="inherit">Search</Button>
                 </Link>

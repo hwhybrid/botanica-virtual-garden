@@ -1,0 +1,44 @@
+/* PlantCarousel.css */
+
+.plant-carousel-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.custom-carousel {
+    width: 40vw;
+    height: auto; /* Automatically adjust the height to maintain aspect ratio */
+    max-width: 40vw;
+    margin: 0 auto;
+}
+
+.plant-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh; /* 40% of the viewport height */
+}
+
+.image-container {
+    width: 300px; /* 40% of the viewport width */
+    height: 300px; /* 40% of the viewport width for a square */
+    margin-right: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+.plant-info {
+    flex: 1;
+    text-align: left;
+}
+
+/* Rest of your CSS styles... */

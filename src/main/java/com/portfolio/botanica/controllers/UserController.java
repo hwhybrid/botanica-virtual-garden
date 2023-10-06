@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/users")
@@ -73,13 +74,14 @@ public class UserController {
 
     @GetMapping("/username/{username}")
     public ResponseEntity<UserDto> getUserByUsername(@PathVariable String username) {
-        User user = userRepository.findByUsername(username);
-        if (user != null) {
+        Optional<User> userOptional = userRepository.findByUsername(username);
+        if (userOptional.isPresent()) {
             UserDto userDto = new UserDto();
-            BeanUtils.copyProperties(user, userDto);
+            BeanUtils.copyProperties(userOptional.get(), userDto);
             return new ResponseEntity<>(userDto, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
     }
 
     @GetMapping("/email/{email}")

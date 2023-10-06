@@ -1,14 +1,18 @@
 package com.portfolio.botanica.dtos;
 
 import com.portfolio.botanica.entities.UserRole;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+
+import java.io.Serializable;
 
 @Getter
 @Setter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserDto {
     private Long userId;
     private String username;
+    private String password;
     private String email;
-    private UserRole role; // Enum for user role (admin/user)
 }
