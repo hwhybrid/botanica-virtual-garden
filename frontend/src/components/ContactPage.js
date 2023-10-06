@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Typography, makeStyles } from '@mui/material';
+import { Container, Typography } from '@mui/material';
+import {  makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
     container: {
