@@ -1,0 +1,142 @@
+[
+  {
+    "plantName": "Rose",
+    "scientificName": "Rosa",
+    "plantDescription": "The rose is a woody perennial flowering plant.",
+    "edible": false,
+    "imageUrl": "plant_images/rose.jpg"
+  },
+  {
+    "plantName": "Tulip",
+    "scientificName": "Tulipa",
+    "plantDescription": "Tulips are spring-blooming perennials that grow from bulbs.",
+    "edible": false,
+    "imageUrl": "plant_images/tulip.jpg"
+  },
+  {
+    "plantName": "Tomato",
+    "scientificName": "Solanum lycopersicum",
+    "plantDescription": "Tomato is a red or yellowish fruit with a juicy pulp, used as a vegetable in cooking.",
+    "edible": true,
+    "imageUrl": "plant_images/tomato.jpg"
+  },
+  {
+    "plantName": "Lavender",
+    "scientificName": "Lavandula",
+    "plantDescription": "Lavender is a fragrant herb known for its beautiful purple flowers.",
+    "edible": false,
+    "imageUrl": "plant_images/lavender.jpg"
+  },
+  {
+    "plantName": "Basil",
+    "scientificName": "Ocimum basilicum",
+    "plantDescription": "Basil is a culinary herb known for its aromatic leaves.",
+    "edible": true,
+    "imageUrl": "plant_images/basil.jpg"
+  },
+  {
+    "plantName": "Sunflower",
+    "scientificName": "Helianthus annuus",
+    "plantDescription": "Sunflower is a tall, annual plant with large, bright yellow flowers.",
+    "edible": true,
+    "imageUrl": "plant_images/sunflower.jpg"
+  },
+  {
+    "plantName": "Ficus",
+    "scientificName": "Ficus benjamina",
+    "plantDescription": "Ficus is a popular houseplant known for its glossy green leaves.",
+    "edible": false,
+    "imageUrl": "plant_images/ficus.jpg"
+  },
+  {
+    "plantName": "Lily",
+    "scientificName": "Lilium",
+    "plantDescription": "Lilies are flowering plants with large, colorful petals.",
+    "edible": false,
+    "imageUrl": "plant_images/lily.jpg"
+  },
+  {
+    "plantName": "Pepper",
+    "scientificName": "Capsicum",
+    "plantDescription": "Peppers are vegetables known for their spicy or sweet flavor.",
+    "edible": true,
+    "imageUrl": "plant_images/pepper.jpg"
+  },
+  {
+    "plantName": "Daisy",
+    "scientificName": "Bellis perennis",
+    "plantDescription": "Daisies are small, white flowers with a yellow center.",
+    "edible": false,
+    "imageUrl": "plant_images/daisy.jpg"
+  },
+  {
+    "plantName": "Mint",
+    "scientificName": "Mentha",
+    "plantDescription": "Mint is a fragrant herb used in cooking and beverages.",
+    "edible": true,
+    "imageUrl": "plant_images/mint.jpg"
+  },
+  {
+    "plantName": "Cactus",
+    "scientificName": "Cactaceae",
+    "plantDescription": "Cacti are succulent plants adapted to arid environments.",
+    "edible": false,
+    "imageUrl": "plant_images/cactus.jpg"
+  },
+  {
+    "plantName": "Lemon",
+    "scientificName": "Citrus limon",
+    "plantDescription": "Lemon is a citrus fruit known for its sour taste.",
+    "edible": true,
+    "imageUrl": "plant_images/lemon.jpg"
+  },
+  {
+    "plantName": "Orchid",
+    "scientificName": "Orchidaceae",
+    "plantDescription": "Orchids are exotic flowers known for their beauty and diversity.",
+    "edible": false,
+    "imageUrl": "plant_images/orchid.jpg"
+  },
+  {
+    "plantName": "Cucumber",
+    "scientificName": "Cucumis sativus",
+    "plantDescription": "Cucumber is a refreshing vegetable often used in salads.",
+    "edible": true,
+    "imageUrl": "plant_images/cucumber.jpg"
+  },
+  {
+    "plantName": "Pansy",
+    "scientificName": "Viola tricolor",
+    "plantDescription": "Pansies are colorful, cool-weather flowers with distinctive markings.",
+    "edible": false,
+    "imageUrl": "plant_images/pansy.jpg"
+  },
+  {
+    "plantName": "Carrot",
+    "scientificName": "Daucus carota",
+    "plantDescription": "Carrot is a root vegetable known for its orange color and sweet taste.",
+    "edible": true,
+    "imageUrl": "plant_images/carrot.jpg"
+  },
+  {
+    "plantName": "Aloe Vera",
+    "scientificName": "Aloe barbadensis miller",
+    "plantDescription": "Aloe vera is a succulent plant known for its soothing properties.",
+    "edible": false,
+    "imageUrl": "plant_images/aloe.jpg"
+  },
+  {
+    "plantName": "Cherry Blossom",
+    "scientificName": "Prunus serrulata",
+    "plantDescription": "Cherry blossoms are delicate, pink flowers that bloom in spring.",
+    "edible": false,
+    "imageUrl": "plant_images/cherry-blossom.jpg"
+  },
+  {
+    "plantName": "Lettuce",
+    "scientificName": "Lactuca sativa",
+    "plantDescription": "Lettuce is a leafy green vegetable used in salads and sandwiches.",
+    "edible": true,
+    "imageUrl": "plant_images/lettuce.jpg"
+  }
+]
