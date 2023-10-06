@@ -10,6 +10,7 @@ import java.util.List;
 
 
 @Entity
+@Table(name = "plants")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter@Setter
