@@ -11,18 +11,18 @@ import SearchPage from './components/SearchPage';
 
 function App() {
   return (
-
-
-      <Routes>
+      <div>
         <Header />
+      <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/carousel" element={<PlantCarousel />} />
         <Route path="/user/gardens" element={<UserGardensPage />} />
         <Route path="/search" element={<SearchPage />} />
-        <Footer />
       </Routes>
+        <Footer />
+      </div>
   );
 }
 

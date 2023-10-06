@@ -1,26 +1,45 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button} from '@mui/material';
+import {  makeStyles } from '@mui/styles';
+
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const useStyles = makeStyles((theme) => ({
+    appBar: {
+        backgroundColor: theme.palette.primary.main,
+    },
+    title: {
+        flexGrow: 1,
+        fontWeight: 'bold',
+    },
+    link: {
+        textDecoration: 'none',
+        color: 'inherit',
+        margin: theme.spacing(1, 2),
+    },
+}));
+
+function Header() {
+    const classes = useStyles();
+
     return (
-        <AppBar position="static">
+        <AppBar position="static" className={classes.appBar}>
             <Toolbar>
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                <Typography variant="h6" className={classes.title}>
                     Botanica Virtual Garden
                 </Typography>
-                <Button color="inherit" component={Link} to="/">
-                    Home
-                </Button>
-                <Button color="inherit" component={Link} to="/about">
-                    About
-                </Button>
-                <Button color="inherit" component={Link} to="/contact">
-                    Contact
-                </Button>
+                <Link to="/" className={classes.link}>
+                    <Button color="inherit">Home</Button>
+                </Link>
+                <Link to="/about" className={classes.link}>
+                    <Button color="inherit">About</Button>
+                </Link>
+                <Link to="/contact" className={classes.link}>
+                    <Button color="inherit">Contact</Button>
+                </Link>
             </Toolbar>
         </AppBar>
     );
-};
+}
 
 export default Header;

@@ -17,6 +17,23 @@ const theme = createTheme({
     },
 });
 
+// const theme = createTheme({
+//     palette: {
+//         primary: {
+//             main: '#4CAF50', // Green primary color
+//         },
+//         secondary: {
+//             main: '#F06292', // Pink secondary color
+//         },
+//         background: {
+//             default: '#FAFAFA', // Light gray background
+//         },
+//     },
+//     typography: {
+//         fontFamily: 'Comfortaa, Arial, sans-serif',
+//     },
+// });
+
 export default theme;
 
 
