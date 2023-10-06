@@ -37,6 +37,12 @@ function Header() {
                 <Link to="/contact" className={classes.link}>
                     <Button color="inherit">Contact</Button>
                 </Link>
+                <Link to="/carousel" className={classes.link}>
+                    <Button color="inherit">Plant Carousel</Button>
+                </Link>
+                <Link to="/search" className={classes.link}>
+                    <Button color="inherit">Search</Button>
+                </Link>
             </Toolbar>
         </AppBar>
     );
