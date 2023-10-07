@@ -17,6 +17,8 @@ public class PlantedPlant {
    @Transient
     private String plantName;
 
+
+
     @ManyToOne
     @JoinColumn(name = "garden_id")
     private Garden garden;
@@ -30,6 +32,14 @@ public class PlantedPlant {
         if (garden != null && plant != null) {
             // Assuming that the Garden entity has a method to fetch the plant name based on plantId
             return garden.getPlantNameByPlantId(plant.getPlantId());
+        }
+        return null;
+    }
+
+    // Getter method to fetch the imageUrl from the associated Plant entity
+    public String getImageUrl() {
+        if (plant != null) {
+            return plant.getImageUrl();
         }
         return null;
     }
