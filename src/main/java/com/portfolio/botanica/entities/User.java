@@ -1,12 +1,9 @@
 package com.portfolio.botanica.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-import com.portfolio.botanica.dtos.UserDto;
 import lombok.*;
 
 import java.util.*;
-
 
 @Entity
 @Table(name = "users")
@@ -35,6 +32,8 @@ public class User {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Garden> gardens;
+
+
 
 //    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
 //    @JsonBackReference

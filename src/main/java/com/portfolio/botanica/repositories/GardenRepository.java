@@ -12,6 +12,4 @@ public interface GardenRepository extends JpaRepository<Garden, Long> {
     List<Garden> findByUserUsername(String username);
     long countByUserUsername(String username);
 
-
-
 }

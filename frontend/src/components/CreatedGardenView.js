@@ -1,38 +1,91 @@
-import React from 'react';
-import { Container, Typography, Paper, Button } from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import { Container, Typography, Paper, Button, List, ListItem, Grid } from '@mui/material';
 import axios from "axios";
 
 const CreatedGardenView = () => {
-    // You can fetch garden data and display it here
+    const [gardenData, setGardenData] = useState({
+        gardenName: "",
+        selectedPlants: [],
+        plantedPlants: [], // Initialize with an empty array
+    });
+
+    // Use this useEffect to retrieve query parameters and initialize state
+    useEffect(() => {
+        // Parse the query parameters from the URL
+        const params = new URLSearchParams(window.location.search);
+        const gardenNameParam = params.get('gardenName');
+        const selectedPlantsParam = params.get('selectedPlants');
+
+        // Sets garden name and selected plants in state
+        if (gardenNameParam) {
+            setGardenData({ ...gardenData, gardenName: gardenNameParam });
+        }
+        if (selectedPlantsParam) {
+            // Further process the selected plant IDs if needed
+            // For example, convert them to an array
+            const selectedPlantIds = selectedPlantsParam.split(',');
+
+            // Updates the state with selected plant IDs
+            setGardenData({ ...gardenData, selectedPlants: selectedPlantIds });
+        }
+
+        // You can fetch additional garden data from the backend if necessary
+
+    }, []);
 
     const handleSaveGarden = () => {
         // Prepare the data to be sent to the backend
-        const gardenData = {
+        const gardenDataToSave = {
+            gardenName: gardenData.gardenName,
+            selectedPlants: gardenData.selectedPlants,
             // Include relevant garden data here
         };
 
-        // Send a POST request to create the garden
-        axios.post('http://localhost:8080/api/gardens', gardenData)
+        // Send a POST request to create/update the garden
+        axios.post('http://localhost:8080/api/gardens', gardenDataToSave)
             .then((response) => {
                 // Handle the response as needed (e.g., show a success message)
+                console.log('Garden saved successfully:', response.data);
             })
             .catch((error) => {
                 // Handle errors (e.g., display an error message)
                 console.error('Error saving the garden:', error);
             });
-
     }
 
     return (
         <Container>
-            <Typography variant="h4">Your Created Garden</Typography>
+            <Typography variant="h4" style={{ textAlign: 'center' }}>Your Custom Garden</Typography>
             <Paper elevation={3} style={{ padding: '16px' }}>
-                {/* Display the garden content here */}
-                {/* You can fetch garden data and display it */}
+                <p>Garden Name: {gardenData.gardenName}</p>
+                <Typography variant="h6">Selected Plants:</Typography>
+                <List>
+                    {gardenData.selectedPlants.map((plantId, index) => (
+                        <ListItem key={index}>
+                            {/* Fetch plant details for the selected plant ID */}
+                            {/* You can use a separate API endpoint to fetch plant details */}
+                            {/* Display plant details here */}
+                            {/* Example: Plant Name, Scientific Name, Description, etc. */}
+                        </ListItem>
+                    ))}
+                </List>
             </Paper>
             <Button variant="contained" color="primary" onClick={handleSaveGarden}>
                 Save Garden
             </Button>
+            <Typography variant="h6" style={{ marginTop: '16px', textAlign: 'center' }}>Planted Plants:</Typography>
+            <Grid container spacing={2}>
+                {/* Map through planted plant data and display images */}
+                {gardenData.plantedPlants.map((plantedPlant, index) => (
+                    <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+                        <img
+                            src={plantedPlant.imageUrl}
+                            alt={plantedPlant.plantName()}
+                            style={{ width: '100%', height: 'auto' }}
+                        />
+                    </Grid>
+                ))}
+            </Grid>
         </Container>
     );
 };

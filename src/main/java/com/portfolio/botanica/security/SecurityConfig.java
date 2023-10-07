@@ -1,5 +1,7 @@
 package com.portfolio.botanica.security;
 
+import com.portfolio.botanica.services.CustomUserDetailsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -17,6 +19,30 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @EnableWebSecurity
 
 public class SecurityConfig {
+
+
+    private CustomUserDetailsService userDetailsService;
+
+    @Autowired
+    public SecurityConfig(CustomUserDetailsService userDetailsService) { this.userDetailsService = userDetailsService;}
+
+    //    @Bean
+//    public UserDetailsService users() {
+//        UserDetails admin = User.builder()
+//                .username("admin")
+//                .password("password")
+//                .roles("ADMIN")
+//                .build();
+//
+//        UserDetails user = User.builder()
+//                .username("user")
+//                .password("password")
+//                .roles("USER")
+//                .build();
+//
+//        return new InMemoryUserDetailsManager(admin, user);
+
+//    }
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -36,7 +62,7 @@ public class SecurityConfig {
 
                 })
                 .formLogin(withDefaults()); // Form-based login as the default. THE ORDER MATTERS!!!
-        ;
+
         return http.build();
 
     }
@@ -52,4 +78,21 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
 
     }
+
+    //    @Bean
+//    public UserDetailsService users() {
+//        UserDetails admin = User.builder()
+//                .username("admin")
+//                .password("password")
+//                .roles("ADMIN")
+//                .build();
+//
+//        UserDetails user = User.builder()
+//                .username("user")
+//                .password("password")
+//                .roles("USER")
+//                .build();
+//
+//        return new InMemoryUserDetailsManager(admin, user);
+
 }
